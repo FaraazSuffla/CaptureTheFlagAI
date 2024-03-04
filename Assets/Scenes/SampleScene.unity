@@ -143,6 +143,22 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 913483774}
+    - target: {fileID: 5624384540106162776, guid: 38bf0390c8af4884ebc4cb87a71bb73a, type: 3}
+      propertyPath: m_VersionIndex
+      value: 8921
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624384540106162776, guid: 38bf0390c8af4884ebc4cb87a71bb73a, type: 3}
+      propertyPath: m_SelectedEdges.Array.size
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624384540106162776, guid: 38bf0390c8af4884ebc4cb87a71bb73a, type: 3}
+      propertyPath: m_SelectedFaces.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624384540106162776, guid: 38bf0390c8af4884ebc4cb87a71bb73a, type: 3}
+      propertyPath: m_SelectedVertices.Array.size
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 8365017931680794729, guid: 38bf0390c8af4884ebc4cb87a71bb73a, type: 3}
       propertyPath: m_Name
       value: Base Red
