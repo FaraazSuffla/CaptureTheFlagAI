@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1641101731320280342, guid: 38bf0390c8af4884ebc4cb87a71bb73a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a26de236ce89e94b963be8fa2b7ade6, type: 2}
     - target: {fileID: 1816473170699901324, guid: 38bf0390c8af4884ebc4cb87a71bb73a, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -610,6 +614,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 402446836046150747, guid: ce231d73f994b5640ad75c12868333bf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e148de6cdf2d164aa3e3f90ce8c852c, type: 2}
     - target: {fileID: 4809401198049517696, guid: ce231d73f994b5640ad75c12868333bf, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1606,6 +1614,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1516474827}
+    - target: {fileID: 6014487487352554923, guid: 131ae95280ed03643b211db641db8076, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d530ffe6c4968843806085897955b9d, type: 2}
     - target: {fileID: 7872452721607113027, guid: 131ae95280ed03643b211db641db8076, type: 3}
       propertyPath: m_Name
       value: Crates (1)
@@ -2140,7 +2152,7 @@ Transform:
   m_GameObject: {fileID: 1202461492}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21, y: 6, z: 11}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2790,7 +2802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rotationSpeed: 180
+  rotationSpeed: 90
   flagLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -3540,7 +3552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 907229053471055539, guid: f93b57fb33578d841bd865629581fb78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3876811
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 907229053471055539, guid: f93b57fb33578d841bd865629581fb78, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3720,6 +3732,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 770677911}
+    - target: {fileID: 6014487487352554923, guid: 131ae95280ed03643b211db641db8076, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d530ffe6c4968843806085897955b9d, type: 2}
     - target: {fileID: 7872452721607113027, guid: 131ae95280ed03643b211db641db8076, type: 3}
       propertyPath: m_Name
       value: Crates
@@ -3747,7 +3763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967066075772237456, guid: 30a2e522dd6ec6844b611f9a209d96f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5084975
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2967066075772237456, guid: 30a2e522dd6ec6844b611f9a209d96f5, type: 3}
       propertyPath: m_LocalPosition.z
