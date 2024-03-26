@@ -12,7 +12,6 @@ public class AIController : MonoBehaviour
 {
     // Public fields for references
     public GameObject player;
-    public GameObject aiBase;
     public string playerFlagTag = "Flag Blue"; // Tag of the player's flag GameObject
     public string aiFlagTag = "Flag Red"; // Tag of the AI agent's flag GameObject
 
@@ -75,17 +74,33 @@ public class AIController : MonoBehaviour
 
     void ReturningFlagBehavior()
     {
-        if (aiBase != null && currentFlag != null)
+        if (currentFlag != null)
         {
-            agent.SetDestination(aiBase.transform.position);
+            GameObject targetBase = null;
 
-            if (Vector3.Distance(transform.position, aiBase.transform.position) < 1f)
+            // Check the color of the flag and set the target base accordingly
+            if (currentFlag.CompareTag(playerFlagTag))
             {
-                // AI reached its base
-                // Return the flag to base
-                ReturnFlag();
-                // Transition back to fetching flag
-                currentState = AIState.FetchingFlag;
+                targetBase = GameObject.FindGameObjectWithTag("PlayerBase");
+            }
+            else if (currentFlag.CompareTag(aiFlagTag))
+            {
+                targetBase = GameObject.FindGameObjectWithTag("AIBase");
+            }
+
+            // Return the flag to the target base
+            if (targetBase != null)
+            {
+                agent.SetDestination(targetBase.transform.position);
+
+                if (Vector3.Distance(transform.position, targetBase.transform.position) < 1f)
+                {
+                    // AI reached its base
+                    // Return the flag to base
+                    ReturnFlag();
+                    // Transition back to fetching flag
+                    currentState = AIState.FetchingFlag;
+                }
             }
         }
     }

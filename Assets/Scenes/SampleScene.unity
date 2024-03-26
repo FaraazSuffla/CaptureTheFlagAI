@@ -323,7 +323,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1595174777}
-  aiBase: {fileID: 0}
   playerFlagTag: Flag Blue
   aiFlagTag: Flag Red
   currentState: 0

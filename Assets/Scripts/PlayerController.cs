@@ -45,9 +45,17 @@ public class PlayerController : MonoBehaviour
     // Function to pick up the flag
     private void PickUpFlag(Flag flag)
     {
-        currentFlag = flag;
-        flag.PickUp();
+        if (flag != null)
+        {
+            currentFlag = flag;
+            flag.PickUp();
+        }
+        else
+        {
+            Debug.LogError("Trying to pick up a null flag.");
+        }
     }
+
 
     // Function to return the flag to base
     private void ReturnFlag()
