@@ -323,8 +323,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1595174777}
-  ownBase: {fileID: 1331552518}
-  flag: {fileID: 1545390479}
+  ownBase: {fileID: 460100866}
+  flagTag: Flag Red
   currentState: 0
 --- !u!54 &249399989
 Rigidbody:
@@ -435,7 +435,7 @@ Transform:
   m_GameObject: {fileID: 249399987}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071067, z: -0, w: 0.7071069}
-  m_LocalPosition: {x: 41, y: 2, z: 10}
+  m_LocalPosition: {x: 39, y: 2, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2341,11 +2341,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1331552518 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2668545728776912645, guid: 6ad1b24dc05cf3c4f981ca3fd8fd9b9e, type: 3}
-  m_PrefabInstance: {fileID: 1507650523043060487}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1461579478
 Mesh:
   m_ObjectHideFlags: 0
@@ -2975,7 +2970,7 @@ Transform:
   m_GameObject: {fileID: 1595174777}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071067, z: -0, w: 0.7071069}
-  m_LocalPosition: {x: -10.5, y: 2, z: 10}
+  m_LocalPosition: {x: -9.5, y: 2, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

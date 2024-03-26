@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - ownBase
-  - Flag
+  - Flag Red
+  - Flag Blue
   layers:
   - Default
   - TransparentFX
