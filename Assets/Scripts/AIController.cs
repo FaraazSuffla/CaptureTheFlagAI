@@ -139,6 +139,11 @@ public class AIController : MonoBehaviour
     // Reset the AI's position to the initial position
     public void ResetPosition()
     {
+        // Reset the AI's position to the initial position
         transform.position = initialPosition;
+
+        // Reset the AI's state to FetchingFlag
+        currentState = AIState.FetchingFlag;
     }
+
 }
