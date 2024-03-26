@@ -16,8 +16,13 @@ public class FlagSpawner : MonoBehaviour
     {
         // Spawn red flag at blue base position
         GameObject redFlag = Instantiate(redFlagPrefab, blueBasePosition.position, Quaternion.identity);
+        // Attach the Flag script to the red flag GameObject
+        redFlag.AddComponent<Flag>();
+
         // Spawn blue flag at red base position
         GameObject blueFlag = Instantiate(blueFlagPrefab, redBasePosition.position, Quaternion.identity);
+        // Attach the Flag script to the blue flag GameObject
+        blueFlag.AddComponent<Flag>();
 
         // Set parent to this object for organization
         redFlag.transform.SetParent(transform);

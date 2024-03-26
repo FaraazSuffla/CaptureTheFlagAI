@@ -24,4 +24,21 @@ public class PlayerController : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up * mouseX);
     }
+
+    // Detect when the player enters the trigger zone of the flag
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Flag"))
+        {
+            // Pick up the flag
+            Flag flag = other.GetComponent<Flag>();
+            PickUpFlag(flag);
+        }
+    }
+
+    // Function to pick up the flag
+    private void PickUpFlag(Flag flag)
+    {
+        flag.PickUp();
+    }
 }
