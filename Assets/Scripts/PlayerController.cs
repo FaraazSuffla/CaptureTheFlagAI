@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             // Return the flag to base and reset the game
             ReturnFlag();
-            gameManager.ResetGame(); // Reset the game without affecting the scores
+            gameManager.PlayerReturnedFlag(); // Notify GameManager of flag return
             ResetPosition(); // Reset the player's position
         }
     }
@@ -73,5 +73,4 @@ public class PlayerController : MonoBehaviour
         // Set the player's position to the desired initial position
         transform.position = new Vector3(-9.5f, 2f, 10f);
     }
-
 }
