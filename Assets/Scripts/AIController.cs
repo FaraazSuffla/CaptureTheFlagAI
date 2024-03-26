@@ -20,11 +20,15 @@ public class AIController : MonoBehaviour
     private NavMeshAgent agent;
     private GameObject currentFlag;
     private Flag flagScript;
+    private GameManager gameManager; // Reference to the GameManager
+    private Vector3 initialPosition; // Initial position of the AI
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        gameManager = FindObjectOfType<GameManager>(); // Find the GameManager in the scene
         Invoke("FindFlag", 0.1f);
+        initialPosition = transform.position; // Store the initial position
     }
 
     void FindFlag()
@@ -96,11 +100,11 @@ public class AIController : MonoBehaviour
                 currentState = AIState.FetchingFlag; // Transition back to FetchingFlag state
                 currentFlag = null; // Reset currentFlag after returning it to base
                 Debug.Log("Flag returned, currentState set to FetchingFlag");
+                gameManager.ResetGame(); // Reset the game without affecting the scores
+                ResetPosition(); // Reset the AI's position
             }
         }
     }
-
-
 
     void ChasingPlayerBehavior()
     {
@@ -113,7 +117,8 @@ public class AIController : MonoBehaviour
     private void PickUpFlag()
     {
         flagScript.PickUp();
-        currentFlag = null; // Reset currentFlag after picking it up
+        currentFlag = null;
+        // Reset currentFlag after picking it up
     }
 
     private void ReturnFlag()
@@ -129,5 +134,11 @@ public class AIController : MonoBehaviour
             // Set visibility of the flag back to true
             flagScript.gameObject.SetActive(true);
         }
+    }
+
+    // Reset the AI's position to the initial position
+    public void ResetPosition()
+    {
+        transform.position = initialPosition;
     }
 }

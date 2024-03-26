@@ -6,11 +6,13 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 180f;
 
     private Rigidbody rb;
+    private GameManager gameManager; // Reference to the GameManager
     private Flag currentFlag; // Reference to the currently held flag
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        gameManager = FindObjectOfType<GameManager>(); // Find the GameManager in the scene
     }
 
     void Update()
@@ -37,8 +39,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("PlayerBase") && currentFlag != null)
         {
-            // Return the flag to base
+            // Return the flag to base and reset the game
             ReturnFlag();
+            gameManager.ResetGame(); // Reset the game without affecting the scores
+            ResetPosition(); // Reset the player's position
         }
     }
 
@@ -56,11 +60,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     // Function to return the flag to base
     private void ReturnFlag()
     {
         currentFlag.ReturnToBase();
         currentFlag = null;
     }
+
+    // Public method to reset the player's position
+    public void ResetPosition()
+    {
+        // Set the player's position to the desired initial position
+        transform.position = new Vector3(-9.5f, 2f, 10f);
+    }
+
 }
