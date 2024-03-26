@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1595174777}
+  aiBase: {fileID: 0}
   playerFlagTag: Flag Blue
   aiFlagTag: Flag Red
   currentState: 0
@@ -1650,6 +1651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 990373588}
+  - component: {fileID: 990373589}
   m_Layer: 0
   m_Name: AIBase
   m_TagString: AIBase
@@ -1666,12 +1668,33 @@ Transform:
   m_GameObject: {fileID: 990373587}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.5, y: 2, z: -3}
+  m_LocalPosition: {x: 37, y: 1, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &990373589
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990373587}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.067604, y: 7.7881136, z: 8.088639}
+  m_Center: {x: 2.7538185, y: 3.3940568, z: -0.8461156}
 --- !u!1001 &993959435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2011,6 +2034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1044902938}
+  - component: {fileID: 1044902939}
   m_Layer: 0
   m_Name: PlayerBase
   m_TagString: PlayerBase
@@ -2027,12 +2051,33 @@ Transform:
   m_GameObject: {fileID: 1044902937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.5, y: 2, z: 21.25}
+  m_LocalPosition: {x: -8.5, y: 1, z: 21.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1044902939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044902937}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.281799, y: 6.908182, z: 8.413652}
+  m_Center: {x: -1.1035588, y: 2.954091, z: 2.9711199}
 --- !u!43 &1069032842
 Mesh:
   m_ObjectHideFlags: 0
