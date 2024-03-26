@@ -12,6 +12,7 @@ public class AIController : MonoBehaviour
 {
     // Public fields for references
     public GameObject player;
+    public GameObject aiBase;
     public string playerFlagTag = "Flag Blue"; // Tag of the player's flag GameObject
     public string aiFlagTag = "Flag Red"; // Tag of the AI agent's flag GameObject
 
@@ -85,7 +86,7 @@ public class AIController : MonoBehaviour
             }
             else if (currentFlag.CompareTag(aiFlagTag))
             {
-                targetBase = GameObject.FindGameObjectWithTag("AIBase");
+                targetBase = aiBase;
             }
 
             // Return the flag to the target base
