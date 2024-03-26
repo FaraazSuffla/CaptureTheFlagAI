@@ -84,16 +84,23 @@ public class AIController : MonoBehaviour
 
     void ReturningFlagBehavior()
     {
+        Debug.Log("ReturningFlagBehavior");
         // Return the flag to base
         if (currentFlag != null)
         {
             if (Vector3.Distance(transform.position, aiBase.transform.position) < 1.5f)
             {
                 ReturnFlag();
-                currentState = AIState.FetchingFlag;
+                // Set visibility of the flag back to true
+                flagScript.gameObject.SetActive(true);
+                currentState = AIState.FetchingFlag; // Transition back to FetchingFlag state
+                currentFlag = null; // Reset currentFlag after returning it to base
+                Debug.Log("Flag returned, currentState set to FetchingFlag");
             }
         }
     }
+
+
 
     void ChasingPlayerBehavior()
     {
