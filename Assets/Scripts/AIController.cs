@@ -42,6 +42,17 @@ public class AIController : MonoBehaviour
 
     void Update()
     {
+        // Display the AI state in the console
+        Debug.Log("AI State: " + currentState);
+
+        // Check if the flag is picked up and the AI is not already returning the flag
+        if (flagScript.currentState == Flag.FlagState.PickedUp && currentState != AIState.ReturningFlag)
+        {
+            currentState = AIState.ReturningFlag; // Transition to ReturningFlag state
+            agent.SetDestination(aiBase.transform.position); // Set destination to AI base
+        }
+
+        // Handle AI behavior based on the current state
         switch (currentState)
         {
             case AIState.FetchingFlag:
@@ -65,31 +76,21 @@ public class AIController : MonoBehaviour
             {
                 PickUpFlag();
                 currentState = AIState.ReturningFlag;
+                // Set destination to AI base after picking up the flag
+                agent.SetDestination(aiBase.transform.position);
             }
         }
     }
 
     void ReturningFlagBehavior()
     {
+        // Return the flag to base
         if (currentFlag != null)
         {
-            GameObject targetBase = null;
-            if (currentFlag.CompareTag(playerFlagTag))
+            if (Vector3.Distance(transform.position, aiBase.transform.position) < 1.5f)
             {
-                targetBase = GameObject.FindGameObjectWithTag("PlayerBase");
-            }
-            else if (currentFlag.CompareTag(aiFlagTag))
-            {
-                targetBase = GameObject.FindGameObjectWithTag("AIBase");
-            }
-            if (targetBase != null)
-            {
-                agent.SetDestination(targetBase.transform.position);
-                if (Vector3.Distance(transform.position, targetBase.transform.position) < 1.5f)
-                {
-                    ReturnFlag();
-                    currentState = AIState.FetchingFlag;
-                }
+                ReturnFlag();
+                currentState = AIState.FetchingFlag;
             }
         }
     }
@@ -113,12 +114,13 @@ public class AIController : MonoBehaviour
         flagScript.ReturnToBase();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    // OnTriggerEnter is called when the Collider other enters the trigger
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag(playerFlagTag) || collision.gameObject.CompareTag(aiFlagTag))
+        if (other.CompareTag("AIBase"))
         {
-            currentFlag = collision.gameObject;
-            agent.isStopped = false; // Ensure the agent is not stopped
+            // Set visibility of the flag back to true
+            flagScript.gameObject.SetActive(true);
         }
     }
 }
